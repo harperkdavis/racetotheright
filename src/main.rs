@@ -56,7 +56,7 @@ async fn redirect_http_to_https(ports: Ports) {
         }
     };
 
-    let addr = SocketAddr::new(IpAddr::from(Ipv6Addr::LOCALHOST), ports.http);
+    let addr = SocketAddr::new(IpAddr::from(Ipv6Addr::UNSPECIFIED), ports.http);
     let listener = TcpListener::bind(addr).await.unwrap();
     tracing::debug!("(http->https) listening on {}", addr);
 
@@ -84,7 +84,7 @@ async fn main() {
     ).await.unwrap();
     
     // ipv6 address
-    let addr = SocketAddr::new(IpAddr::from(Ipv6Addr::LOCALHOST), ports.https);
+    let addr = SocketAddr::new(IpAddr::from(Ipv6Addr::UNSPECIFIED), ports.https);
     
     debug!("(main) listening on {}", addr);
 
