@@ -2,3 +2,5 @@
 /build
 .env.development.local
 /.coho
+/deploy
+/crt
